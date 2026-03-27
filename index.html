@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Consciente | José Felipe Carneiro</title>
+    <meta name="description" content="7 pilares que definem a alta produtividade para qualquer área da vida. O novo livro de José Felipe Carneiro, co-fundador da Cervejaria Wäls e ZX Ventures (Ambev).">
+    <meta property="og:title" content="Performance Consciente | José Felipe Carneiro">
+    <meta property="og:description" content="Pare de produzir no automático. Comece a performar com consciência.">
+    <meta property="og:image" content="livro-capa.jpg">
+    <meta property="og:type" content="book">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='16' y='23' text-anchor='middle' font-size='20' font-weight='bold' fill='%23c9a84c' font-family='sans-serif'>PC</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(201,168,76,0.06) 0%, transparent 50%);
+        }
+        .hero-inner {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .hero-text { order: 2; }
+            .hero-cover { order: 1; }
+        }
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        .hero h1 span { color: #c9a84c; }
+        .hero-sub {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 460px;
+        }
+        @media (max-width: 768px) { .hero-sub { margin: 0 auto 32px; } }
+        .hero-cover img {
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 40px 80px rgba(201,168,76,0.15), 0 0 0 1px rgba(255,255,255,0.05);
+        }
+
+        /* Buttons */
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: #c9a84c;
+            color: #000;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-gold:hover { background: #d4b55a; transform: translateY(-2px); }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: transparent;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover { border-color: #fff; }
+        .btn-row { display: flex; gap: 16px; flex-wrap: wrap; }
+        @media (max-width: 768px) { .btn-row { justify-content: center; } }
+
+        /* Sections */
+        section { padding: 100px 24px; }
+        @media (max-width: 768px) { section { padding: 60px 20px; } }
+        .section-inner { max-width: 900px; margin: 0 auto; }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .section-sub {
+            color: rgba(255,255,255,0.5);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 48px;
+            max-width: 600px;
+        }
+
+        /* Pilares */
+        .pilares { background: #0a0a0a; }
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .pilar-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 32px 28px;
+            transition: border-color 0.3s;
+        }
+        .pilar-card:hover { border-color: rgba(201,168,76,0.3); }
+        .pilar-num {
+            font-size: 0.65rem;
+            color: #c9a84c;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .pilar-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .pilar-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* Author */
+        .author { background: #000; }
+        .author-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        @media (max-width: 768px) { .author-grid { grid-template-columns: 1fr; text-align: center; } }
+        .author-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            border: 3px solid rgba(201,168,76,0.3);
+        }
+        @media (max-width: 768px) { .author-photo { margin: 0 auto; width: 150px; height: 150px; } }
+        .author h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+        .author-role { color: #c9a84c; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+        .author p { color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 12px; }
+
+        /* Quotes */
+        .quotes { background: #0a0a0a; }
+        .quote-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 16px;
+        }
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .quote-author { font-size: 0.8rem; color: #c9a84c; font-weight: 600; }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.03));
+            border-top: 1px solid rgba(201,168,76,0.2);
+            border-bottom: 1px solid rgba(201,168,76,0.2);
+            text-align: center;
+        }
+        .cta-price {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 16px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge">Novo livro</div>
+                <h1>Performance<br><span>Consciente</span></h1>
+                <p class="hero-sub">
+                    7 pilares que definem a alta produtividade para qualquer area da vida.
+                    Escrito por quem construiu negocios em mais de 30 paises.
+                </p>
+                <div class="btn-row">
+                    <a href="https://a.co/d/0fV9dTgl" target="_blank" rel="noopener" class="btn-gold">
+                        Garantir Meu Exemplar
+                    </a>
+                    <a href="#pilares" class="btn-outline">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="hero-cover">
+                <img src="livro-capa.jpg" alt="Capa do livro Performance Consciente" loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <!-- PILARES -->
+    <section class="pilares" id="pilares">
+        <div class="section-inner">
+            <div class="section-title">Os 7 Pilares</div>
+            <p class="section-sub">
+                Cada pilar foi construido na pratica, ao longo de decadas empreendendo,
+                liderando equipes e tomando decisoes sob pressao.
+            </p>
+            <div class="pilares-grid">
+                <div class="pilar-card">
+                    <div class="pilar-num">PILAR 01</div>
+                    <h3>Clareza de Proposito</h3>
+                    <p>Saber exatamente por que voce faz o que faz. Sem isso, produtividade vira agitacao.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-num">PILAR 02</div>
+                    <h3>Dominio do Tempo</h3>
+                    <p>Nao e sobre fazer mais. E sobre fazer o que importa, na hora certa, com intencao.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-num">PILAR 03</div>
+                    <h3>Energia Sustentavel</h3>
+                    <p>Performance de verdade exige um corpo que aguente. Sono, alimentacao e movimento.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-num">PILAR 04</div>
+                    <h3>Foco Radical</h3>
+                    <p>Dizer nao para o que distrai e sim para o que transforma. Priorizar com coragem.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-num">PILAR 05</div>
+                    <h3>Disciplina Flexivel</h3>
+                    <p>Rotinas que sustentam, nao que aprisionam. Consistencia sem rigidez.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-num">PILAR 06</div>
+                    <h3>Inteligencia Relacional</h3>
+                    <p>Resultados se constroem com pessoas. Liderar, inspirar e manter relacoes saudaveis.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-num">PILAR 07</div>
+                    <h3>Presenca e Consciencia</h3>
+                    <p>O pilar que sustenta todos os outros. Estar presente no que faz, com clareza mental.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHOR -->
+    <section class="author" id="autor">
+        <div class="section-inner">
+            <div class="author-grid">
+                <img src="jose-felipe-opt.jpeg" alt="Jose Felipe Carneiro" class="author-photo" loading="lazy">
+                <div>
+                    <h3>Jose Felipe Carneiro</h3>
+                    <div class="author-role">Empreendedor Serial, Palestrante e Autor</div>
+                    <p>
+                        Co-fundador da Cervejaria Wals, a mais premiada do mundo, e da ZX Ventures,
+                        braco de inovacao da AB InBev que atuou em mais de 30 paises.
+                    </p>
+                    <p>
+                        Nos EUA criou a Novo Brazil e uma das maiores hard kombuchas do mundo.
+                        No Brasil fundou a Khappy Kombucha, a Fazenda Cervejeira e a Stadt Jever.
+                    </p>
+                    <p>
+                        Performance Consciente e o resultado de tudo que ele aprendeu construindo
+                        negocios do zero, errando, acertando e nunca parando.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTES -->
+    <section class="quotes" id="leitores">
+        <div class="section-inner">
+            <div class="section-title">O que estao dizendo</div>
+            <p class="section-sub">Leitores que ja aplicaram os 7 pilares na vida real.</p>
+
+            <div class="quote-card">
+                <div class="quote-text">"Li em dois dias. Nao e um livro motivacional. E um manual pratico pra quem ta cansado de render sem viver."</div>
+                <div class="quote-author">Marcelo R. — Empresario, Belo Horizonte</div>
+            </div>
+            <div class="quote-card">
+                <div class="quote-text">"O pilar da energia sustentavel mudou minha rotina. Parei de me destruir pra entregar resultado."</div>
+                <div class="quote-author">Ana C. — Diretora de operacoes, Sao Paulo</div>
+            </div>
+            <div class="quote-card">
+                <div class="quote-text">"Dei de presente pro meu socio. A gente nunca mais brigou sobre prioridades."</div>
+                <div class="quote-author">Ricardo T. — Co-fundador de startup, Florianopolis</div>
+            </div>
+            <div class="quote-card">
+                <div class="quote-text">"Finalmente alguem que fala de produtividade sem parecer um robo. O Jose Felipe escreve como conversa."</div>
+                <div class="quote-author">Fernanda L. — Coach executiva, Curitiba</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta">
+        <div class="section-inner" style="max-width:600px;">
+            <div class="section-title">Pronto para performar<br>com consciencia?</div>
+            <p class="section-sub" style="margin:16px auto 32px;">
+                Disponivel na Amazon. Entrega para todo o Brasil.
+            </p>
+            <a href="https://a.co/d/0fV9dTgl" target="_blank" rel="noopener" class="btn-gold">
+                Garantir Meu Exemplar
+            </a>
+            <div class="cta-price">Livro fisico · Frete pela Amazon</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        Performance Consciente &middot; Jose Felipe Carneiro &middot; &copy; 2026<br>
+        <a href="https://josefelipe.com.br" target="_blank" style="color:rgba(201,168,76,0.5);">josefelipe.com.br</a>
+    </footer>
+
+</body>
+</html>
